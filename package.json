@@ -1,0 +1,68 @@
+{
+  "name": "110th",
+  "publisher": "piedcipher",
+  "displayName": "110th",
+  "description": "Lottie Viewer",
+  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lottieViewer.preview",
+        "title": "Preview Lottie Animation"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "lottieViewer.preview",
+          "when": "editorLangId == json",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "lottieViewer.preview",
+          "when": "resourceLangId == json",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "ci": "npm run lint && npm run compile && npm test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piedcipher/110th.git"
+  },
+  "bugs": {
+    "url": "https://github.com/piedcipher/110th/issues"
+  }
+}
